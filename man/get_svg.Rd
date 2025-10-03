@@ -42,7 +42,7 @@ An svg_obj if return_object==TRUE, a response object if return_object==FALSE
 Get svg representations from the thenmap API
 }
 \examples{
-get_svg(api, "se-7", "2015")
+get_svg(api=api, dataset_name="se-7", date="2015")
 
 }
 \references{

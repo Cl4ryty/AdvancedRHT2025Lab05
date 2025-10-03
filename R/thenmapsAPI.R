@@ -87,7 +87,7 @@ thenmapsAPI <- function(version="v2"){
 #' @export
 #'
 #' @examples
-#' get_data(api, "se-7", "2015")
+#' get_data(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#data}
 get_data <- function(api, dataset_name, date, language=NULL, data_format="json", return_object=TRUE){
@@ -138,7 +138,7 @@ get_data <- function(api, dataset_name, date, language=NULL, data_format="json",
 #' @export
 #'
 #' @examples
-#' get_info(api, "se-7", "2015")
+#' get_info(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#info}
 get_info <- function(api, dataset_name, date, language=NULL, return_object=TRUE){
@@ -174,7 +174,7 @@ get_info <- function(api, dataset_name, date, language=NULL, return_object=TRUE)
 #' @export
 #'
 #' @examples
-#' get_geo(api, "se-7", "2015")
+#' get_geo(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#geo}
 get_geo <- function(api, dataset_name, date, language=NULL, geo_type="geojson", geo_crs="wgs84", geo_props=NULL, return_object=TRUE){
@@ -225,7 +225,7 @@ get_geo <- function(api, dataset_name, date, language=NULL, geo_type="geojson", 
 #' @export
 #'
 #' @examples
-#' get_svg(api, "se-7", "2015")
+#' get_svg(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#svg}
 get_svg <- function(api, dataset_name, date, language=NULL, svg_proj=NULL, svg_width=NULL, svg_height=NULL, svg_props=NULL, return_object=TRUE){

@@ -32,32 +32,32 @@ api <- thenmapsAPI(version="v2")
 
 # Getting data from the API
 ```{r}
-get_data(api, "se-7", "2015")
+get_data(api=api, dataset_name="se-7", date="2015")
 
 
-get_data(api, "se-7", "2015", return_object=FALSE)
+get_data(api=api, dataset_name="se-7", date="2015", return_object=FALSE)
 ```
 
 # Getting geodata from the API
 ```{r}
-get_geo(api, "se-7", "2015")
+get_geo(api=api, dataset_name="se-7", date="2015")
 ```
 
 # Getting metadata for a dataset
 ```{r}
-get_info(api, "se-7", "2015")
+get_info(api=api, dataset_name="se-7", date="2015")
 ```
 
 # Getting an SVG representation
 ```{r}
-get_svg(api, "se-7", "2015")
+get_svg(api=api, dataset_name="se-7", date="2015")
 ```
 
 
 # Visualization example
 # ```{r}
 library(svgtools)
-svg <- get_svg(api, "se-7", "2015")
+svg <- get_svg(api=api, dataset_name="se-7", date="2015")
 display_svg(svg)
 ```
 

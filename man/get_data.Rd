@@ -33,7 +33,7 @@ A data.frame if return_object==TRUE, a response object if return_object==FALSE
 Get data from the thenmap API
 }
 \examples{
-get_data(api, "se-7", "2015")
+get_data(api=api, dataset_name="se-7", date="2015")
 
 }
 \references{
