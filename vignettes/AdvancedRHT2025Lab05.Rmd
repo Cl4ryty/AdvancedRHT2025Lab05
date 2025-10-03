@@ -1,0 +1,63 @@
+---
+title: "AdvancedRHT2025Lab05"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{AdvancedRHT2025Lab05}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(AdvancedRHT2025Lab05)
+```
+
+
+This package provides a simple wrapper to the thenmap API \url{http://api.thenmap.net} to allow for easy, seamless further processing and analysis of the data in R. 
+
+Wrapper functions for the four main modules of the API allow for easy access, returning the data in formats suitable for further analysis in R, such as data.frame for the data, sf for the geodata, or svg_obj from the svgtools package for the svgs. However, finegrained control over the parsing of the data can still be taken by the user through the provided option to return the raw httr2 requests. This can be done by setting `return_object` to `FALSE`. 
+
+A constructor function for the thenmapsAPI object returns an API object that keeps track of the selected version, as well as the valid options various fields, specifically datasets, modules, valid_projections, data_formats, and geo_type.
+
+# Creating an API object
+```{r}
+api <- thenmapsAPI(version="v2")
+```
+
+# Getting data from the API
+```{r}
+get_data(api, "se-7", "2015")
+
+
+get_data(api, "se-7", "2015", return_object=FALSE)
+```
+
+# Getting geodata from the API
+```{r}
+get_geo(api, "se-7", "2015")
+```
+
+# Getting metadata for a dataset
+```{r}
+get_info(api, "se-7", "2015")
+```
+
+# Getting an SVG representation
+```{r}
+get_svg(api, "se-7", "2015")
+```
+
+
+# Visualization example
+```{r}
+library(svgtools)
+svg <- get_svg(api, "se-7", "2015")
+display_svg(svg)
+```
+
