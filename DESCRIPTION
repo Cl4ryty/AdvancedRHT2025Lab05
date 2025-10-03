@@ -22,7 +22,9 @@ Imports:
   httr2,
   sf,
   svgtools,
-  jsonlite
+  jsonlite,
+  utils,
+  tibble
 Suggests: 
     knitr,
     rmarkdown,

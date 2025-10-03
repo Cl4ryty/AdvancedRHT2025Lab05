@@ -16,6 +16,9 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(AdvancedRHT2025Lab05)
+library(sf)
+library(svgtools)
+library(tibble)
 ```
 
 
@@ -55,7 +58,7 @@ get_svg(api=api, dataset_name="se-7", date="2015")
 
 
 # Visualization example
-# ```{r}
+```{r}
 library(svgtools)
 svg <- get_svg(api=api, dataset_name="se-7", date="2015")
 display_svg(svg)

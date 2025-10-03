@@ -23,6 +23,3 @@ The httr2 response object
 \description{
 Query the thenmap API
 }
-\examples{
-access_api(api, "se-7", "data", "2015")
-}

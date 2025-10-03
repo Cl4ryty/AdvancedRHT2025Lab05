@@ -1,3 +1,4 @@
+library(utils)
 library(httr2)
 library(svgtools)
 library(jsonlite)
@@ -87,6 +88,7 @@ thenmapsAPI <- function(version="v2"){
 #' @export
 #'
 #' @examples
+#' api <- thenmapsAPI(version="v2")
 #' get_data(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#data}
@@ -115,7 +117,7 @@ get_data <- function(api, dataset_name, date, language=NULL, data_format="json",
   if(req_parameters$data_format=="csv"){
     tmpfile <- tempfile()
     writeLines(httr2::resp_body_string(resp, encoding = "UTF-8"), con=tmpfile)
-    return(read.csv(tmpfile))
+    return(utils::read.csv(tmpfile))
   }
 
   if(!return_object){
@@ -138,6 +140,7 @@ get_data <- function(api, dataset_name, date, language=NULL, data_format="json",
 #' @export
 #'
 #' @examples
+#' api <- thenmapsAPI(version="v2")
 #' get_info(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#info}
@@ -174,6 +177,7 @@ get_info <- function(api, dataset_name, date, language=NULL, return_object=TRUE)
 #' @export
 #'
 #' @examples
+#' api <- thenmapsAPI(version="v2")
 #' get_geo(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#geo}
@@ -225,6 +229,7 @@ get_geo <- function(api, dataset_name, date, language=NULL, geo_type="geojson", 
 #' @export
 #'
 #' @examples
+#' api <- thenmapsAPI(version="v2")
 #' get_svg(api=api, dataset_name="se-7", date="2015")
 #'
 #' @references \url{http://api.thenmap.net/doc/v2/#svg}
@@ -279,9 +284,6 @@ get_svg <- function(api, dataset_name, date, language=NULL, svg_proj=NULL, svg_w
 #' @param req_parameters List of request parameters
 #'
 #' @returns The httr2 response object
-#'
-#' @examples
-#' access_api(api, "se-7", "data", "2015")
 access_api <- function(api, dataset_name, module, date, req_parameters=NULL){
   # check that api is a thenmaps api object
   if(!inherits(api, "thenmapsAPI")){

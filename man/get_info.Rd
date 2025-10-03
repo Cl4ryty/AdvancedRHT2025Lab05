@@ -24,6 +24,7 @@ A list if return_object==TRUE, a response object if return_object==FALSE
 Get metadata for a dataset from the thenmap API
 }
 \examples{
+api <- thenmapsAPI(version="v2")
 get_info(api=api, dataset_name="se-7", date="2015")
 
 }
