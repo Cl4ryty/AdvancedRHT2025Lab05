@@ -13,6 +13,7 @@ test_that("get_data input checking works for dates", {
 })
 
 test_that("input checking for data arguments works", {
+  api <- thenmapsAPI()
   expect_error(get_data(api, "se-4", "*", data_format=NULL), "data_format must be", ignore.case = TRUE)
   expect_error(get_data(api, "se-4", "*", data_format="txt"), "data_format must be", ignore.case = TRUE)
   expect_no_error(get_data(api, "se-4", "*", data_format="csv"))
@@ -21,6 +22,7 @@ test_that("input checking for data arguments works", {
 })
 
 test_that("input checking for geo arguments works", {
+  api <- thenmapsAPI()
   expect_error(get_geo(api, "se-4", "*", geo_type=NULL), "geo_type must be", ignore.case = TRUE)
   expect_error(get_geo(api, "se-4", "*", geo_type="json"), "geo_type must be", ignore.case = TRUE)
   expect_no_error(get_geo(api, "se-4", "*", geo_type="geojson"))
@@ -30,6 +32,7 @@ test_that("input checking for geo arguments works", {
 })
 
 test_that("input checking for svg arguments works", {
+  api <- thenmapsAPI()
   expect_error(get_svg(api, "se-4", "*", svg_height="5"), "svg_height must be", ignore.case = TRUE)
   expect_error(get_svg(api, "se-4", "*", svg_height=-1), "svg_height must be", ignore.case = TRUE)
   expect_no_error(get_svg(api, "se-4", "*", svg_height=NULL))

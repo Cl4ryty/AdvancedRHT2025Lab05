@@ -55,7 +55,7 @@ get_svg(api, "se-7", "2015")
 
 
 # Visualization example
-```{r}
+# ```{r}
 library(svgtools)
 svg <- get_svg(api, "se-7", "2015")
 display_svg(svg)
