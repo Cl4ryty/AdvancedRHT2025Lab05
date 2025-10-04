@@ -1,9 +1,3 @@
-library(utils)
-library(httr2)
-library(svgtools)
-library(jsonlite)
-library(sf)
-
 #' Create thenmapsAPI instance
 #'
 #' @param version The version of the API to use, either "v1" or "v2"
